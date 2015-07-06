@@ -10,15 +10,16 @@ module.exports = angular.module('ng-if-bootstrap-grid', [])
 			restrict: ngIf.restrict,
 			link: function($scope, $element, $attr) {
 
-				var yourCustomValue = $window.innerWidth;
+				var yourCustomValue = $window.innerWidth === undefined ? $window.clientWidth : $window.innerWidth;
 				angular.element($window).bind('resize', function() {
-					yourCustomValue = $window.innerWidth;
+					yourCustomValue = $window.innerWidth === undefined ? $window.clientWidth : $window.innerWidth;
 					$scope.$apply();
 				});
 
 				$attr.ngIf = function() {
 					var render = false;
-					var splitArr = $attr.ngIfBootstrapGrid.split(/[, ]/g); // allows runtime changes
+					var splitArr = $attr.ngIfBootstrapGrid.split(/[, ]+/g); // allows runtime changes
+
 					for(var i = 0; i < splitArr.length; i++) {
 						switch(splitArr[i].toLowerCase()) {
 							case 'xs':
@@ -55,15 +56,16 @@ module.exports = angular.module('ng-if-bootstrap-grid', [])
 			restrict: ngIf.restrict,
 			link: function($scope, $element, $attr) {
 
-				var yourCustomValue = $window.innerWidth;
+				var yourCustomValue = $window.innerWidth === undefined ? $window.clientWidth : $window.innerWidth;
 				angular.element($window).bind('resize', function() {
-					yourCustomValue = $window.innerWidth;
+					yourCustomValue = $window.innerWidth === undefined ? $window.clientWidth : $window.innerWidth;
 					$scope.$apply();
 				});
 
 				$attr.ngIf = function() {
 					var render = false;
-					var splitArr = $attr.ngIfNotBootstrapGrid.split(/[, ]/g); // allows runtime changes
+					var splitArr = $attr.ngIfNotBootstrapGrid.split(/[, ]+/g); // allows runtime changes
+
 					for(var i = 0; i < splitArr.length; i++) {
 						switch(splitArr[i].toLowerCase()) {
 							case 'xs':
