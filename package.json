@@ -1,15 +1,15 @@
 {
   "name": "ng-if-bootstrap-grid",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Angular directives, including or excluding HTML-elements, based on currently active Bootstrap grid: xs, sm, md, lg",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
-  "repository" :
-  { "type" : "git"
-  , "url" : "git+https://github.com/xErik/ng-if-bootstrap-grid.git"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xErik/ng-if-bootstrap-grid.git"
   },
   "keywords": [
     "bootstrap",
