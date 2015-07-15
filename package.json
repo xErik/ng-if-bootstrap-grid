@@ -1,6 +1,6 @@
 {
   "name": "ng-if-bootstrap-grid",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Angular directives, including or excluding HTML-elements, based on currently active Bootstrap grid: xs, sm, md, lg",
   "main": "src/index.js",
   "scripts": {

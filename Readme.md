@@ -1,4 +1,8 @@
-Angular directives, including or excluding HTML-elements, based on currently active Bootstrap grid: xs, sm, md, lg.
+Angular directives, including or excluding HTML-elements, based on currently active Bootstrap grid: xs, sm, md, lg. Allowing for a reduction of watcherts.
+
+1. Bootstrap 3 grid class detection takes places via injecting Bootstrap 3 grid classes and testing them for visibility.
+2. Internally, `ng-if` is used.
+3. Thus, as this directive combines the Bootstrap-css-grid and Angular-ng-if, it should be pretty solid.
 
 # Installation
 `npm i ng-if-bootstrap-grid --save`
@@ -7,9 +11,7 @@ Angular directives, including or excluding HTML-elements, based on currently act
 
 ***AngularJS***
 ```javascript
-angular.module('myApp',
-[require('ng-if-bootstrap-grid').name]
-);
+angular.module('myApp', [require('ng-if-bootstrap-grid').name]);
 ```
 
 ***HTML***
@@ -34,7 +36,8 @@ Works like `ng-if`: the excluded elements (and their children) will not get rend
 The attributes take the grid class as a parameter. More than one grid class can be set as parameter value, by separating them with commas or spaces.
 
 # TODO
-Extensive cross-browser testing
+The injection does not take place in the `compile` function of the directive, as this (misteriously) breaks the code.
+
 
 # Links
 [Git](https://github.com/xErik/ng-if-bootstrap-grid)
